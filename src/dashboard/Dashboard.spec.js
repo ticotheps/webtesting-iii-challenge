@@ -5,6 +5,7 @@ import { render, fireEvent, cleanup } from "react-testing-library";
 import "jest-dom/extend-expect";
 
 import Dashboard from "./Dashboard";
+import Display from "../display/Display";
 
 afterEach(cleanup);
 
@@ -21,15 +22,15 @@ describe("<Dashboard />", () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
-  it("should show the controls", () => {
+  it("should render the following controls: 'Lock Gate' and 'Close Gate'", () => {
     const { getByText } = render(<Dashboard />);
 
     getByText(/lock gate/i);
     getByText(/close gate/i);
   });
 
-  it("should show the display", () => {
-    const { getByText } = render(<Dashboard />);
+  it("should render the following displays: 'Unlocked' and 'Open'", () => {
+    const { getByText, queryByText } = render(<Display />);
 
     getByText(/unlocked/i);
     getByText(/open/i);
