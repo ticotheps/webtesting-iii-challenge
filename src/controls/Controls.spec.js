@@ -18,4 +18,4 @@ describe('<Controls />', () => {
       // snapshots are a JSON representation of the DOM tree
       expect(tree.toJSON()).toMatchSnapshot();
     });
-  });
+});
