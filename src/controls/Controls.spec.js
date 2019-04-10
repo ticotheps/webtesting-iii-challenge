@@ -11,11 +11,9 @@ describe('<Controls />', () => {
       ReactDOM.unmountComponentAtNode(div);
     });
   
-    // Step 2: Write this test.
     it('matches snapshot', () => {
-      const tree = renderer.create(<Controls />); // generates a DOM tree
+      const tree = renderer.create(<Controls />);
   
-      // snapshots are a JSON representation of the DOM tree
       expect(tree.toJSON()).toMatchSnapshot();
     });
 });
