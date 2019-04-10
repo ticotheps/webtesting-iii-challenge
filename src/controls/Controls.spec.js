@@ -20,4 +20,16 @@ describe('<Controls />', () => {
   
       expect(tree.toJSON()).toMatchSnapshot();
     });
+
+    describe("toggleLocked()", () => {
+      it("should", () => {
+        
+      });
+    });
+  
+    describe("toggleClosed()", () => {
+      it("should", () => {
+        
+      });
+    });
 });

@@ -4,6 +4,7 @@ import renderer from "react-test-renderer";
 import { render, fireEvent, cleanup } from "react-testing-library";
 import "jest-dom/extend-expect";
 
+import Controls from "../controls/Controls";
 import Dashboard from "../dashboard/Dashboard";
 import Display from "./Display";
 
@@ -29,6 +30,20 @@ describe("<Display />", () => {
     getByText(/open/i);
     getByText(/lock gate/i);
     getByText(/close gate/i);
+  });
+
+  it("should display 'Closed' if the closed prop is true", () => {
+
+    const { getByText, queryByText } = render(<Display locked={false} closed={true} />);
+
+    getByText(/closed/i);
+  });
+
+  it("should display 'Open' if the closed prop is false", () => {
+
+    const { getByText, queryByText } = render(<Display locked={false} closed={false} />);
+
+    getByText(/open/i);
   });
 
   describe("the gate", () => {
