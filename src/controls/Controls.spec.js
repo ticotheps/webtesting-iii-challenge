@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
+import { render, fireEvent, cleanup } from 'react-testing-library';
+import 'jest-dom/extend-expect';
 
 import Controls from './Controls';
+
+afterEach(cleanup);
 
 describe('<Controls />', () => {
     it('renders without crashing', () => {
