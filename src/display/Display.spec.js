@@ -22,6 +22,15 @@ describe("<Display />", () => {
     expect(tree.toJSON()).toMatchSnapshot();
   });
 
+  it("should display if gate is open/closed and if it is locked/unlocked", () => {
+    const { getByText } = render(<Dashboard />);
+
+    getByText(/unlocked/i);
+    getByText(/open/i);
+    getByText(/lock gate/i);
+    getByText(/close gate/i);
+  });
+
   describe("the gate", () => {
     it("should default to unlocked", () => {
       const { getByText } = render(<Dashboard />);
